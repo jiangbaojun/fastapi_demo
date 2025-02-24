@@ -5,12 +5,12 @@ from fastapi.responses import RedirectResponse
 
 app = FastAPI()
 
-static_dir = os.path.join(os.path.dirname(__file__), "static")
-app.mount("/static", StaticFiles(directory=static_dir), name="static")
+static_dir = os.path.join(os.path.dirname(__file__), "views")
+app.mount("views", StaticFiles(directory=static_dir), name="views")
 
 @app.get("/")
 async def hello():
-    # return RedirectResponse(url="/static/index.html", status_code=301)
+    # return RedirectResponse(url="/views/index.html", status_code=301)
     return "hello"
 
 
