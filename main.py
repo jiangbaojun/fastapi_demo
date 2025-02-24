@@ -11,8 +11,8 @@ app.mount("/static", StaticFiles(directory=static_dir), name="views")
 
 @app.get("/")
 async def hello():
-    # return RedirectResponse(url="/views/index.html", status_code=301)
-    return "hello"
+    return RedirectResponse(url="/views/index.html", status_code=301)
+    # return "hello"
 
 
 @app.get("/healthcheck")
